@@ -1,0 +1,1 @@
+Sistema de permisos de {{ $nombre }} y {{ $slug }}
