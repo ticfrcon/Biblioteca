@@ -26,3 +26,5 @@ use Illuminate\Support\Facades\Route;
 //Route::get('permiso/{nombre}/{slug}', 'PermisoController@index');
 
 Route::get('/', 'InicioController@index');
+Route::get('admin/permiso', 'Admin\PermisoController@index')->name('permiso');
+Route::group(['prefix'=> 'admin', 'namespace')
