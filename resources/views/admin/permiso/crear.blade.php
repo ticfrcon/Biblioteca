@@ -13,7 +13,7 @@
                 <h3 class="box-title">Crear Permisos</h3>
             </div>
             <div class="box-body">
-                Aqui el formulario
+                Aqui el formulario ...
             </div>
         </div>
     </div>
