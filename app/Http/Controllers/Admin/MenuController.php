@@ -38,6 +38,7 @@ class MenuController extends Controller
     public function guardar(ValidacionMenu $request)
     {
         Menu::create($request->all());
+        return redirect('admin/menu/crear')->with('mensaje','El menú creado con éxito');
     }
 
     /**
