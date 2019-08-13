@@ -17,9 +17,9 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
+  @yield("styles")
   <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
 
-  @yield("styles")
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   
@@ -64,11 +64,17 @@
     <!-- AdminLTE App -->
     <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
     <!-- AdminLTE for demo purposes -->
+
+    @yield("scriptsPlugins")
+    
     <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
     <script src="{{asset("asset/js/jquery-validation/jquery.validate.min.js")}}"></script>
     <script src="{{asset("asset/js/jquery-validation/localization/messages_es.min.js")}}"></script>
     <script src="{{asset("asset/js/funciones.js")}}"></script>
 
-@yield("scripts")
+
+
+    @yield("scripts")
+    
 </body>
 </html>
