@@ -5,6 +5,7 @@ Menú
 
 @section("styles")
 <link href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}" rel="stylesheet" type="text/css" />
+
 @endsection
 
 @section("scriptsPlugins")

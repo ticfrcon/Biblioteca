@@ -54,8 +54,10 @@
     <!-- Inicio Footer -->
   </div>
     <!-- jQuery 3 -->
-    <script src="{{asset("assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
-    <!-- Bootstrap 3.3.7 -->
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Bootstrap 3.3.7 -->
     <script src="{{asset("assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
     <!-- SlimScroll -->
     <script src="{{asset("assets/$theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
@@ -68,9 +70,10 @@
     @yield("scriptsPlugins")
     
     <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
-    <script src="{{asset("asset/js/jquery-validation/jquery.validate.min.js")}}"></script>
-    <script src="{{asset("asset/js/jquery-validation/localization/messages_es.min.js")}}"></script>
-    <script src="{{asset("asset/js/funciones.js")}}"></script>
+    <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
+    <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
+    <script src="{{asset("assets/js/scripts.js")}}"></script>
+    <script src="{{asset("assets/js/funciones.js")}}"></script>
 
 
 
