@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidacionRol;
 use App\Models\Admin\Rol;
 
+
 class RolController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class RolController extends Controller
      */
     public function index()
     {
-        $datas= Rol::orderBy('id')->get();
+        $datas = Rol::orderBy('id')->get();
         return view('admin.rol.index', compact('datas'));
     }
 
@@ -39,19 +40,9 @@ class RolController extends Controller
     public function guardar(ValidacionRol $request)
     {
         Rol::create($request->all());
-        return redirect('admin/rol')->with('mensaje', 'Rol creado con éxito');
+        return redirect('admin/rol')->with('mensaje', 'Rol creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function mostrar($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -61,7 +52,8 @@ class RolController extends Controller
      */
     public function editar($id)
     {
-        //
+        $data = Rol::findOrFail($id);
+        return view('admin.rol.editar', compact('data'));
     }
 
     /**
@@ -71,9 +63,10 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function actualizar(Request $request, $id)
+    public function actualizar(ValidacionRol $request, $id)
     {
-        //
+        Rol::findOrFail($id)->update($request->all());
+        return redirect('admin/rol')->with('mensaje', 'Rol actualizado con exito');
     }
 
     /**
@@ -82,8 +75,16 @@ class RolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function eliminar($id)
+    public function eliminar(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            if (Rol::destroy($id)) {
+                return response()->json(['mensaje' => 'ok']);
+            } else {
+                return response()->json(['mensaje' => 'ng']);
+            }
+        } else {
+            abort(404);
+        }
     }
 }
